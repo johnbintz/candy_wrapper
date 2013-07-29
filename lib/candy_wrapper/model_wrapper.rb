@@ -55,6 +55,10 @@ module CandyWrapper
     end
 
     def save
+      if respond_to? :before_wrapped_save
+        before_wrapped_save @__object__
+      end
+
       self.class.before_wrapped_save.each do |before|
         send("#{before}=", @__object__, @__params__[before])
       end

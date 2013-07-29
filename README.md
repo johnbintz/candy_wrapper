@@ -44,8 +44,12 @@ class DatabaseObjectFormObject < CandyWrapper::ModelWrapper
 end
 ```
 
-## Coming soon!
+Also, plug it into ActiveAdmin super-easily, which is where I typicallty
+use it!
 
-* Form objects that hang off of models as if they were relationships
-* A better readme!
+``` ruby
+ActiveAdmin.register Model do
+  wrap_in_form_object
+end
+```
 
